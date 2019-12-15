@@ -1,7 +1,5 @@
 package com.eumji.kotlin.learning
 
-import com.eumji.kotlin.learning.StaticVar.Companion.e
-
 
 //kotlin 自动生成get和set方法
 //对于变量的访问最终会转换成get和set方法的调用（可以反编译字节码）
@@ -50,7 +48,7 @@ fun max(a: Int, b: Int): Int = if (a > b) a else b
 
 
 //方法参数可以指定默认值
-//如果java调用这个方法，那么每个都要复制
+//如果java调用这个方法，那么每个都要赋值
 //JvmOverloads表示重载，此时会被重载为
 //public static final void max2(int a)
 //public static final void max2(int a, int b)
@@ -147,6 +145,7 @@ fun whenCase(name: String): Unit {
 fun listOperator(list: List<String>): Unit {
     val predicate: (Int) -> Boolean = { value -> value > 5 }
     val first = list.filter { value -> value.startsWith("dd") }.map { value -> value.toInt() }.first(predicate)
+    println(first)
 
 }
 
