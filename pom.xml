@@ -42,6 +42,13 @@
     </dependencies>
 
     <build>
+
+<!--        <sourceDirectory>src/main/scala</sourceDirectory>-->
+<!--        <testSourceDirectory>src/test/scala</testSourceDirectory>-->
+
+<!--        <sourceDirectory>src/main/kotlin</sourceDirectory>-->
+<!--        <testSourceDirectory>src/test/kotlin</testSourceDirectory>-->
+
         <plugins>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -58,7 +65,19 @@
                             <sourceDirs>
 <!--                                <source>src/main/java</source>-->
                                 <source>src/main/kotlin</source>
+<!--                                <test>src/test/kotlin</test>-->
 <!--                                <source>src/main/scala</source>-->
+                            </sourceDirs>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>test-compile</id>
+                        <goals> <goal>test-compile</goal> </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <sourceDir>${project.basedir}/src/test/kotlin</sourceDir>
+<!--                                <sourceDir>${project.basedir}/src/test/java</sourceDir>-->
                             </sourceDirs>
                         </configuration>
                     </execution>
@@ -79,6 +98,17 @@
                         </goals>
                         <configuration>
                             <sourceDir>src/main/scala</sourceDir>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <testSourceDir>src/test/scala</testSourceDir>
                         </configuration>
                     </execution>
                 </executions>
