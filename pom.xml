@@ -10,7 +10,7 @@
     <packaging>java</packaging>
 
     <properties>
-        <kotlin.version>1.3.50</kotlin.version>
+        <kotlin.version>1.6.0</kotlin.version>
         <scala.version>4.2.0</scala.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
